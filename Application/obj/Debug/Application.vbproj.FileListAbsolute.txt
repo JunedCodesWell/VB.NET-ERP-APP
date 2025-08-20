@@ -1,0 +1,13 @@
+D:\New VB.NET\Application\obj\Debug\Application.vbproj.AssemblyReference.cache
+D:\New VB.NET\Application\obj\Debug\Application.Resources.resources
+D:\New VB.NET\Application\obj\Debug\Application.vbproj.GenerateResource.cache
+D:\New VB.NET\Application\obj\Debug\Application.vbproj.CoreCompileInputs.cache
+D:\New VB.NET\Application\bin\Debug\Application.exe.config
+D:\New VB.NET\Application\bin\Debug\Application.exe
+D:\New VB.NET\Application\bin\Debug\Application.pdb
+D:\New VB.NET\Application\bin\Debug\Application.xml
+D:\New VB.NET\Application\obj\Debug\Application.Form1.resources
+D:\New VB.NET\Application\obj\Debug\Application.exe
+D:\New VB.NET\Application\obj\Debug\Application.xml
+D:\New VB.NET\Application\obj\Debug\Application.pdb
+D:\New VB.NET\Application\obj\Debug\Application.exe.config

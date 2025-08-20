@@ -1,0 +1,10 @@
+D:\New VB.NET\Class\CustomerClass\bin\Debug\CustomerClass.dll
+D:\New VB.NET\Class\CustomerClass\bin\Debug\CustomerClass.pdb
+D:\New VB.NET\Class\CustomerClass\bin\Debug\CustomerClass.xml
+D:\New VB.NET\Class\CustomerClass\obj\Debug\CustomerClass.vbproj.AssemblyReference.cache
+D:\New VB.NET\Class\CustomerClass\obj\Debug\CustomerClass.Resources.resources
+D:\New VB.NET\Class\CustomerClass\obj\Debug\CustomerClass.vbproj.GenerateResource.cache
+D:\New VB.NET\Class\CustomerClass\obj\Debug\CustomerClass.vbproj.CoreCompileInputs.cache
+D:\New VB.NET\Class\CustomerClass\obj\Debug\CustomerClass.dll
+D:\New VB.NET\Class\CustomerClass\obj\Debug\CustomerClass.xml
+D:\New VB.NET\Class\CustomerClass\obj\Debug\CustomerClass.pdb
