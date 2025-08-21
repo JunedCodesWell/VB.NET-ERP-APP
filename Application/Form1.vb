@@ -9,6 +9,8 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Customer_masterDataSet.customer_table' table. You can move, or remove it, as needed.
+        Me.Customer_tableTableAdapter.Fill(Me.Customer_masterDataSet.customer_table)
 
         cn = New SqlConnection("Data Source=DESKTOP-4KKK0QH\SQLEXPRESS;Initial Catalog=customer_master;Integrated Security=True;Encrypt=False")
         cn.Open()

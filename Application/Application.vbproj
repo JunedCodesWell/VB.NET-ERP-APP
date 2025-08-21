@@ -73,6 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="customer_masterDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customer_masterDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +123,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="customer_masterDataSet.xsc">
+      <DependentUpon>customer_masterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="customer_masterDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customer_masterDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customer_masterDataSet.xss">
+      <DependentUpon>customer_masterDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
