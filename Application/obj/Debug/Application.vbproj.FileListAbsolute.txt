@@ -11,3 +11,4 @@ D:\New VB.NET\Application\obj\Debug\Application.exe
 D:\New VB.NET\Application\obj\Debug\Application.xml
 D:\New VB.NET\Application\obj\Debug\Application.pdb
 D:\New VB.NET\Application\obj\Debug\Application.exe.config
+D:\New VB.NET\Application\obj\Debug\Application.mainFrm.resources

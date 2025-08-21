@@ -1,10 +1,13 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Form1
 
     Dim cn As SqlConnection
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
+
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         cn = New SqlConnection("Data Source=DESKTOP-4KKK0QH\SQLEXPRESS;Initial Catalog=customer_master;Integrated Security=True;Encrypt=False")
@@ -26,12 +29,17 @@ Public Class Form1
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
-        cmd = New SqlCommand("UPDATE customer_table SET FirstName = '" & txtFirstName.Text & "', LastName = '" & txtLastName.Text & "', DateOfBirth = '" & DateTimePicker1.Value & "', Gender = '" & txtGender.Text & "', Address = '" & txtAddress.Text & "' WHERE Id = " & txtSelect.Text & " ", cn)
-        cn.Open()
-        cmd.ExecuteNonQuery()
-        cn.Close()
-        MsgBox("Record updated successfully")
-        
+        If String.IsNullOrWhiteSpace(txtSelect.Text) OrElse Not Integer.TryParse(txtSelect.Text, Nothing) Then
+            ' if the input in the select box is invalid
+            MessageBox.Show("Please enter a valid integer.")
+        Else
+            cmd = New SqlCommand("UPDATE customer_table SET FirstName = '" & txtFirstName.Text & "', LastName = '" & txtLastName.Text & "', DateOfBirth = '" & DateTimePicker1.Value & "', Gender = '" & txtGender.Text & "', Address = '" & txtAddress.Text & "' WHERE Id = " & txtSelect.Text & " ", cn)
+            cn.Open()
+            cmd.ExecuteNonQuery()
+            cn.Close()
+            MsgBox("Record updated successfully")
+        End If
+
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -46,7 +54,8 @@ Public Class Form1
 
     Private Sub btnRetrive_Click(sender As Object, e As EventArgs) Handles btnRetrive.Click
 
-        cmd = New SqlCommand("SELECT * FROM customer_table WHERE Id = " & txtSelect.Text & "", cn)
+        cmd = New SqlCommand("SELECT * FROM customer_table WHERE Id =  @Id", cn)
+        cmd.Parameters.AddWithValue("@Id", txtSelect.Text)
         cn.Open()
         dr = cmd.ExecuteReader()
         If dr.Read() Then
