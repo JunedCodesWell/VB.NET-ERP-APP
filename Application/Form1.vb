@@ -1,11 +1,15 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Data
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports System.Data.Common
 
 Public Class Form1
 
     Dim cn As SqlConnection
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
+    Dim da As SqlDataAdapter
+    Dim dt As DataTable
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -24,6 +28,7 @@ Public Class Form1
         cmd = New SqlCommand("INSERT INTO customer_table (FirstName, LastName, DateOfBirth, Gender, Address) VALUES ('" & txtFirstName.Text & "', '" & txtLastName.Text & "', '" & DateTimePicker1.Value & "', '" & txtGender.Text & "', '" & txtAddress.Text & "')", cn)
         cn.Open()
         cmd.ExecuteNonQuery()
+        UpdateDGV()
         cn.Close()
         MsgBox("Record inserted successfully")
 
@@ -38,6 +43,7 @@ Public Class Form1
             cmd = New SqlCommand("UPDATE customer_table SET FirstName = '" & txtFirstName.Text & "', LastName = '" & txtLastName.Text & "', DateOfBirth = '" & DateTimePicker1.Value & "', Gender = '" & txtGender.Text & "', Address = '" & txtAddress.Text & "' WHERE Id = " & txtSelect.Text & " ", cn)
             cn.Open()
             cmd.ExecuteNonQuery()
+            UpdateDGV()
             cn.Close()
             MsgBox("Record updated successfully")
         End If
@@ -49,6 +55,7 @@ Public Class Form1
         cmd = New SqlCommand("DELETE FROM customer_table WHERE Id = " & txtSelect.Text & "", cn)
         cn.Open()
         cmd.ExecuteNonQuery()
+        UpdateDGV()
         cn.Close()
         MsgBox("Record deleted successfully")
 
@@ -72,4 +79,20 @@ Public Class Form1
         cn.Close()
 
     End Sub
+
+    Private Sub UpdateDGV()
+
+        da = New SqlDataAdapter
+        dt = New DataTable
+        cmd = New SqlCommand("SELECT * FROM customer_table", cn)
+        'cn.Open()
+        da.SelectCommand = cmd
+        da.Fill(dt)
+        'cn.Close()
+
+        DataGridView1.DataSource = dt
+
+    End Sub
+
+
 End Class
