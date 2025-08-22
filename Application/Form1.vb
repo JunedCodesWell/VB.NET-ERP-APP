@@ -1,17 +1,57 @@
-﻿Imports System.Data.SqlClient
+﻿Imports CustomerClass
+Imports System.Data.SqlClient
 Imports System.Data
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Data.Common
 
-Public Class Form1
 
+Public Class Form1
+    'SQL declarations----------------
     Dim cn As SqlConnection
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
     Dim da As SqlDataAdapter
     Dim dt As DataTable
+    '--------------------------------
+
+    'TextBox.Text values in a variable-------
+    'Dim Id As Integer
+    'Dim FirstName As String = txtFirstName.Text
+    'Dim LastName As String = txtLastName.Text
+    'Dim DOB As Date = DateTimePicker1.Value
+    'Dim Gender As String = txtGender.Text
+    'Dim Address As String = txtAddress.Text
+
+    '-----------------------------------------
 
 
+    'Function for imported Class and Validation----
+    Private Function ClassAndValidation() As Customer
+
+        Dim cust As New Customer()
+
+        If Integer.TryParse(txtSelect.Text, Nothing) Then
+            cust.Id = Convert.ToInt32(txtSelect.Text)
+        Else
+            cust.Id = 0
+        End If
+
+        cust.FirstName = txtFirstName.Text
+        cust.LastName = txtLastName.Text
+        cust.DateOfBirth = DateTimePicker1.Value
+        cust.Gender = cmbGender.Text
+        cust.Address = txtAddress.Text
+
+
+        Return cust
+
+    End Function
+    '-----------------------------------------
+
+    'SQL Parameters---------------------------
+
+
+    '-----------------------------------------
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Customer_masterDataSet.customer_table' table. You can move, or remove it, as needed.
         Me.Customer_tableTableAdapter.Fill(Me.Customer_masterDataSet.customer_table)
@@ -25,7 +65,14 @@ Public Class Form1
 
     Private Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
 
-        cmd = New SqlCommand("INSERT INTO customer_table (FirstName, LastName, DateOfBirth, Gender, Address) VALUES ('" & txtFirstName.Text & "', '" & txtLastName.Text & "', '" & DateTimePicker1.Value & "', '" & txtGender.Text & "', '" & txtAddress.Text & "')", cn)
+        Dim cust As Customer = ClassAndValidation()
+        cmd = New SqlCommand("INSERT INTO customer_table (FirstName, LastName, DateOfBirth, Gender, Address) VALUES (@FirstName, @LastName, @DateOfBirth, @Gender, @Address)", cn)
+        cmd.Parameters.AddWithValue("@Id", cust.Id)
+        cmd.Parameters.AddWithValue("@FirstName", cust.FirstName)
+        cmd.Parameters.AddWithValue("@LastName", cust.LastName)
+        cmd.Parameters.AddWithValue("@DateOfBirth", cust.DateOfBirth)
+        cmd.Parameters.AddWithValue("@Gender", cust.Gender)
+        cmd.Parameters.AddWithValue("@Address", cust.Address)
         cn.Open()
         cmd.ExecuteNonQuery()
         UpdateDGV()
@@ -36,23 +83,28 @@ Public Class Form1
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
-        If String.IsNullOrWhiteSpace(txtSelect.Text) OrElse Not Integer.TryParse(txtSelect.Text, Nothing) Then
-            ' if the input in the select box is invalid
-            MessageBox.Show("Please enter a valid integer.")
-        Else
-            cmd = New SqlCommand("UPDATE customer_table SET FirstName = '" & txtFirstName.Text & "', LastName = '" & txtLastName.Text & "', DateOfBirth = '" & DateTimePicker1.Value & "', Gender = '" & txtGender.Text & "', Address = '" & txtAddress.Text & "' WHERE Id = " & txtSelect.Text & " ", cn)
-            cn.Open()
-            cmd.ExecuteNonQuery()
-            UpdateDGV()
-            cn.Close()
-            MsgBox("Record updated successfully")
-        End If
+        Dim cust As Customer = ClassAndValidation()
+        cmd = New SqlCommand("UPDATE customer_table SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth, Gender = @Gender, Address = @Address WHERE Id = @Id", cn)
+        cmd.Parameters.AddWithValue("@Id", cust.Id)
+        cmd.Parameters.AddWithValue("@FirstName", cust.FirstName)
+        cmd.Parameters.AddWithValue("@LastName", cust.LastName)
+        cmd.Parameters.AddWithValue("@DateOfBirth", cust.DateOfBirth)
+        cmd.Parameters.AddWithValue("@Gender", cust.Gender)
+        cmd.Parameters.AddWithValue("@Address", cust.Address)
+        cn.Open()
+        cmd.ExecuteNonQuery()
+        UpdateDGV()
+        cn.Close()
+        MsgBox("Record updated successfully")
+
 
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
-        cmd = New SqlCommand("DELETE FROM customer_table WHERE Id = " & txtSelect.Text & "", cn)
+        Dim cust As Customer = ClassAndValidation()
+        cmd = New SqlCommand("DELETE FROM customer_table WHERE Id = @Id", cn)
+        cmd.Parameters.AddWithValue("@Id", cust.Id)
         cn.Open()
         cmd.ExecuteNonQuery()
         UpdateDGV()
@@ -63,15 +115,17 @@ Public Class Form1
 
     Private Sub btnRetrive_Click(sender As Object, e As EventArgs) Handles btnRetrive.Click
 
+        Dim cust As Customer = ClassAndValidation()
+        'cust.EnableValidation = False   'Date/Age Msg will not be shown
         cmd = New SqlCommand("SELECT * FROM customer_table WHERE Id =  @Id", cn)
-        cmd.Parameters.AddWithValue("@Id", txtSelect.Text)
+        cmd.Parameters.AddWithValue("@Id", cust.Id)
         cn.Open()
         dr = cmd.ExecuteReader()
         If dr.Read() Then
             txtFirstName.Text = dr(1)
             txtLastName.Text = dr(2)
             DateTimePicker1.Value = dr(3)
-            txtGender.Text = dr(4)
+            cmbGender.Text = dr(4)
             txtAddress.Text = dr(5)
         Else
             MsgBox("No Record Found..!!")

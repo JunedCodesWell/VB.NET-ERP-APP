@@ -12,3 +12,8 @@ D:\New VB.NET\Application\obj\Debug\Application.xml
 D:\New VB.NET\Application\obj\Debug\Application.pdb
 D:\New VB.NET\Application\obj\Debug\Application.exe.config
 D:\New VB.NET\Application\obj\Debug\Application.mainFrm.resources
+D:\New VB.NET\Application\obj\Debug\Application.Form2.resources
+D:\New VB.NET\Application\bin\Debug\CustomerClass.dll
+D:\New VB.NET\Application\bin\Debug\CustomerClass.pdb
+D:\New VB.NET\Application\bin\Debug\CustomerClass.xml
+D:\New VB.NET\Application\obj\Debug\Applicat.4282EC6F.Up2Date

@@ -25,7 +25,6 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.txtLastName = New System.Windows.Forms.TextBox()
-        Me.txtGender = New System.Windows.Forms.TextBox()
         Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.lblFirstName = New System.Windows.Forms.Label()
@@ -40,18 +39,19 @@ Partial Class Form1
         Me.lblId = New System.Windows.Forms.Label()
         Me.btnRetrive = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Customer_masterDataSet = New Application.customer_masterDataSet()
-        Me.CustomertableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Customer_tableTableAdapter = New Application.customer_masterDataSetTableAdapters.customer_tableTableAdapter()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateOfBirthDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GenderDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustomertableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Customer_masterDataSet = New Application.customer_masterDataSet()
+        Me.Customer_tableTableAdapter = New Application.customer_masterDataSetTableAdapters.customer_tableTableAdapter()
+        Me.cmbGender = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Customer_masterDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomertableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Customer_masterDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -67,13 +67,6 @@ Partial Class Form1
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(100, 22)
         Me.txtLastName.TabIndex = 1
-        '
-        'txtGender
-        '
-        Me.txtGender.Location = New System.Drawing.Point(111, 141)
-        Me.txtGender.Name = "txtGender"
-        Me.txtGender.Size = New System.Drawing.Size(100, 22)
-        Me.txtGender.TabIndex = 2
         '
         'txtAddress
         '
@@ -200,20 +193,6 @@ Partial Class Form1
         Me.DataGridView1.Size = New System.Drawing.Size(786, 370)
         Me.DataGridView1.TabIndex = 17
         '
-        'Customer_masterDataSet
-        '
-        Me.Customer_masterDataSet.DataSetName = "customer_masterDataSet"
-        Me.Customer_masterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CustomertableBindingSource
-        '
-        Me.CustomertableBindingSource.DataMember = "customer_table"
-        Me.CustomertableBindingSource.DataSource = Me.Customer_masterDataSet
-        '
-        'Customer_tableTableAdapter
-        '
-        Me.Customer_tableTableAdapter.ClearBeforeFill = True
-        '
         'IdDataGridViewTextBoxColumn
         '
         Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
@@ -263,11 +242,35 @@ Partial Class Form1
         Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
         Me.AddressDataGridViewTextBoxColumn.Width = 125
         '
+        'CustomertableBindingSource
+        '
+        Me.CustomertableBindingSource.DataMember = "customer_table"
+        Me.CustomertableBindingSource.DataSource = Me.Customer_masterDataSet
+        '
+        'Customer_masterDataSet
+        '
+        Me.Customer_masterDataSet.DataSetName = "customer_masterDataSet"
+        Me.Customer_masterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Customer_tableTableAdapter
+        '
+        Me.Customer_tableTableAdapter.ClearBeforeFill = True
+        '
+        'cmbGender
+        '
+        Me.cmbGender.FormattingEnabled = True
+        Me.cmbGender.Items.AddRange(New Object() {"Male", "Female", "Others"})
+        Me.cmbGender.Location = New System.Drawing.Point(111, 139)
+        Me.cmbGender.Name = "cmbGender"
+        Me.cmbGender.Size = New System.Drawing.Size(141, 24)
+        Me.cmbGender.TabIndex = 18
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1126, 501)
+        Me.Controls.Add(Me.cmbGender)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnRetrive)
         Me.Controls.Add(Me.lblId)
@@ -282,15 +285,14 @@ Partial Class Form1
         Me.Controls.Add(Me.lblFirstName)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.txtAddress)
-        Me.Controls.Add(Me.txtGender)
         Me.Controls.Add(Me.txtLastName)
         Me.Controls.Add(Me.txtFirstName)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CustomerFrm"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Customer_masterDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomertableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Customer_masterDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -298,7 +300,6 @@ Partial Class Form1
 
     Friend WithEvents txtFirstName As TextBox
     Friend WithEvents txtLastName As TextBox
-    Friend WithEvents txtGender As TextBox
     Friend WithEvents txtAddress As TextBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents lblFirstName As Label
@@ -322,4 +323,5 @@ Partial Class Form1
     Friend WithEvents DateOfBirthDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents GenderDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents cmbGender As ComboBox
 End Class
