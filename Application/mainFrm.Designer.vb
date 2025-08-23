@@ -29,18 +29,18 @@ Partial Class mainFrm
         '
         'btnCustomer
         '
-        Me.btnCustomer.Location = New System.Drawing.Point(169, 173)
+        Me.btnCustomer.Location = New System.Drawing.Point(247, 107)
         Me.btnCustomer.Name = "btnCustomer"
-        Me.btnCustomer.Size = New System.Drawing.Size(150, 71)
+        Me.btnCustomer.Size = New System.Drawing.Size(307, 117)
         Me.btnCustomer.TabIndex = 0
         Me.btnCustomer.Text = "Customer"
         Me.btnCustomer.UseVisualStyleBackColor = True
         '
         'btnMedicine
         '
-        Me.btnMedicine.Location = New System.Drawing.Point(483, 173)
+        Me.btnMedicine.Location = New System.Drawing.Point(247, 280)
         Me.btnMedicine.Name = "btnMedicine"
-        Me.btnMedicine.Size = New System.Drawing.Size(150, 71)
+        Me.btnMedicine.Size = New System.Drawing.Size(307, 117)
         Me.btnMedicine.TabIndex = 1
         Me.btnMedicine.Text = "Medicine"
         Me.btnMedicine.UseVisualStyleBackColor = True
@@ -48,7 +48,7 @@ Partial Class mainFrm
         'lblMainForm
         '
         Me.lblMainForm.AutoSize = True
-        Me.lblMainForm.Location = New System.Drawing.Point(346, 92)
+        Me.lblMainForm.Location = New System.Drawing.Point(354, 54)
         Me.lblMainForm.Name = "lblMainForm"
         Me.lblMainForm.Size = New System.Drawing.Size(70, 16)
         Me.lblMainForm.TabIndex = 2

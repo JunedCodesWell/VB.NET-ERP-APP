@@ -6,4 +6,5 @@
     Private Sub btnMedicine_Click(sender As Object, e As EventArgs) Handles btnMedicine.Click
         Form2.Show()
     End Sub
+
 End Class

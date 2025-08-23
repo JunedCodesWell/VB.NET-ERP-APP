@@ -1,6 +1,8 @@
 ﻿Public Class Customer
 
     Dim intId As Integer
+    Dim intUpdateId As Integer
+    Dim intDeleteId As Integer
     Dim stFirstName As String
     Dim stLastName As String
     Dim dtDateOfBirth As Date
@@ -17,6 +19,25 @@
             intId = value
         End Set
     End Property
+
+    Public Property UpdateId As Integer
+        Set(ByVal value As Integer)
+            intUpdateId = value
+        End Set
+        Get
+            Return intUpdateId
+        End Get
+    End Property
+
+    Public Property DeleteId As Integer
+        Set(ByVal value As Integer)
+            intDeleteId = value
+        End Set
+        Get
+            Return intDeleteId
+        End Get
+    End Property
+
     Public Property FirstName As String
         Set(value As String)
             If value Is Nothing Then

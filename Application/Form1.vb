@@ -3,6 +3,8 @@ Imports System.Data.SqlClient
 Imports System.Data
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Data.Common
+Imports System.Windows.Forms
+
 
 
 Public Class Form1
@@ -30,11 +32,24 @@ Public Class Form1
 
         Dim cust As New Customer()
 
-        If Integer.TryParse(txtSelect.Text, Nothing) Then
+        If Integer.TryParse(txtSelect.Text, Nothing) Then 'for retrieve
             cust.Id = Convert.ToInt32(txtSelect.Text)
         Else
             cust.Id = 0
         End If
+
+        If Integer.TryParse(txtUpdateId.Text, Nothing) Then 'for update
+            cust.UpdateId = Convert.ToInt32(txtUpdateId.Text)
+        Else
+            cust.UpdateId = 0
+        End If
+
+        If Integer.TryParse(txtDeleteId.Text, Nothing) Then 'for delete
+            cust.DeleteId = Convert.ToInt32(txtDeleteId.Text)
+        Else
+            cust.DeleteId = 0
+        End If
+
 
         cust.FirstName = txtFirstName.Text
         cust.LastName = txtLastName.Text
@@ -88,7 +103,7 @@ Public Class Form1
 
         Dim cust As Customer = ClassAndValidation()
         cmd = New SqlCommand("UPDATE customer_table SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth, Gender = @Gender, Address = @Address WHERE Id = @Id", cn)
-        cmd.Parameters.AddWithValue("@Id", cust.Id)
+        cmd.Parameters.AddWithValue("@Id", cust.UpdateId)
         cmd.Parameters.AddWithValue("@FirstName", cust.FirstName)
         cmd.Parameters.AddWithValue("@LastName", cust.LastName)
         'cmd.Parameters.AddWithValue("@DateOfBirth", cust.DateOfBirth)
@@ -112,7 +127,7 @@ Public Class Form1
 
         Dim cust As Customer = ClassAndValidation()
         cmd = New SqlCommand("DELETE FROM customer_table WHERE Id = @Id", cn)
-        cmd.Parameters.AddWithValue("@Id", cust.Id)
+        cmd.Parameters.AddWithValue("@Id", cust.DeleteId)
         cn.Open()
         cmd.ExecuteNonQuery()
         UpdateDGV()
@@ -157,4 +172,23 @@ Public Class Form1
     End Sub
 
 
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Form2.Show()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        MsgBox("clicked")
+        mainFrm.Show()
+        'error int this piece of code
+    End Sub
+
+    'clear all textboxes
+    Private Sub btnclear_Click(sender As Object, e As EventArgs) Handles btnclear.Click
+        For Each ctrl As Control In Me.Controls
+            If TypeOf ctrl Is System.Windows.Forms.TextBox Then
+                CType(ctrl, System.Windows.Forms.TextBox).Clear()
+            End If
+        Next
+    End Sub
 End Class

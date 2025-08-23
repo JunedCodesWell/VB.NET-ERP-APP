@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.txtLastName = New System.Windows.Forms.TextBox()
         Me.txtAddress = New System.Windows.Forms.TextBox()
@@ -49,28 +50,35 @@ Partial Class Form1
         Me.Customer_masterDataSet = New Application.customer_masterDataSet()
         Me.Customer_tableTableAdapter = New Application.customer_masterDataSetTableAdapters.customer_tableTableAdapter()
         Me.cmbGender = New System.Windows.Forms.ComboBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.txtUpdateId = New System.Windows.Forms.TextBox()
+        Me.txtDeleteId = New System.Windows.Forms.TextBox()
+        Me.btnclear = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomertableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Customer_masterDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtFirstName
         '
-        Me.txtFirstName.Location = New System.Drawing.Point(111, 56)
+        Me.txtFirstName.Location = New System.Drawing.Point(98, 138)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(100, 22)
         Me.txtFirstName.TabIndex = 0
         '
         'txtLastName
         '
-        Me.txtLastName.Location = New System.Drawing.Point(111, 84)
+        Me.txtLastName.Location = New System.Drawing.Point(98, 166)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(100, 22)
         Me.txtLastName.TabIndex = 1
         '
         'txtAddress
         '
-        Me.txtAddress.Location = New System.Drawing.Point(111, 169)
+        Me.txtAddress.Location = New System.Drawing.Point(98, 251)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(200, 85)
@@ -78,7 +86,7 @@ Partial Class Form1
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(111, 112)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(98, 194)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 22)
         Me.DateTimePicker1.TabIndex = 4
@@ -86,7 +94,7 @@ Partial Class Form1
         'lblFirstName
         '
         Me.lblFirstName.AutoSize = True
-        Me.lblFirstName.Location = New System.Drawing.Point(23, 62)
+        Me.lblFirstName.Location = New System.Drawing.Point(10, 144)
         Me.lblFirstName.Name = "lblFirstName"
         Me.lblFirstName.Size = New System.Drawing.Size(69, 16)
         Me.lblFirstName.TabIndex = 5
@@ -95,7 +103,7 @@ Partial Class Form1
         'lblLastName
         '
         Me.lblLastName.AutoSize = True
-        Me.lblLastName.Location = New System.Drawing.Point(23, 90)
+        Me.lblLastName.Location = New System.Drawing.Point(10, 172)
         Me.lblLastName.Name = "lblLastName"
         Me.lblLastName.Size = New System.Drawing.Size(69, 16)
         Me.lblLastName.TabIndex = 6
@@ -104,7 +112,7 @@ Partial Class Form1
         'lblDateOfBirth
         '
         Me.lblDateOfBirth.AutoSize = True
-        Me.lblDateOfBirth.Location = New System.Drawing.Point(23, 118)
+        Me.lblDateOfBirth.Location = New System.Drawing.Point(10, 200)
         Me.lblDateOfBirth.Name = "lblDateOfBirth"
         Me.lblDateOfBirth.Size = New System.Drawing.Size(75, 16)
         Me.lblDateOfBirth.TabIndex = 7
@@ -113,7 +121,7 @@ Partial Class Form1
         'lblGender
         '
         Me.lblGender.AutoSize = True
-        Me.lblGender.Location = New System.Drawing.Point(23, 147)
+        Me.lblGender.Location = New System.Drawing.Point(10, 229)
         Me.lblGender.Name = "lblGender"
         Me.lblGender.Size = New System.Drawing.Size(52, 16)
         Me.lblGender.TabIndex = 8
@@ -122,7 +130,7 @@ Partial Class Form1
         'lblAddress
         '
         Me.lblAddress.AutoSize = True
-        Me.lblAddress.Location = New System.Drawing.Point(23, 175)
+        Me.lblAddress.Location = New System.Drawing.Point(10, 257)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(58, 16)
         Me.lblAddress.TabIndex = 9
@@ -130,42 +138,42 @@ Partial Class Form1
         '
         'btnInsert
         '
-        Me.btnInsert.Location = New System.Drawing.Point(374, 410)
+        Me.btnInsert.Location = New System.Drawing.Point(66, 375)
         Me.btnInsert.Name = "btnInsert"
-        Me.btnInsert.Size = New System.Drawing.Size(113, 58)
+        Me.btnInsert.Size = New System.Drawing.Size(100, 58)
         Me.btnInsert.TabIndex = 11
         Me.btnInsert.Text = "Save/Insert"
         Me.btnInsert.UseVisualStyleBackColor = True
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(715, 410)
+        Me.btnUpdate.Location = New System.Drawing.Point(529, 431)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(96, 58)
+        Me.btnUpdate.Size = New System.Drawing.Size(106, 58)
         Me.btnUpdate.TabIndex = 12
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(989, 410)
+        Me.btnDelete.Location = New System.Drawing.Point(746, 431)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(90, 58)
+        Me.btnDelete.Size = New System.Drawing.Size(103, 58)
         Me.btnDelete.TabIndex = 13
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
         'txtSelect
         '
-        Me.txtSelect.Location = New System.Drawing.Point(111, 27)
+        Me.txtSelect.Location = New System.Drawing.Point(304, 393)
         Me.txtSelect.Name = "txtSelect"
-        Me.txtSelect.Size = New System.Drawing.Size(100, 22)
+        Me.txtSelect.Size = New System.Drawing.Size(115, 22)
         Me.txtSelect.TabIndex = 14
         '
         'lblId
         '
         Me.lblId.AutoSize = True
-        Me.lblId.Location = New System.Drawing.Point(57, 30)
+        Me.lblId.Location = New System.Drawing.Point(44, 112)
         Me.lblId.Name = "lblId"
         Me.lblId.Size = New System.Drawing.Size(18, 16)
         Me.lblId.TabIndex = 15
@@ -173,9 +181,9 @@ Partial Class Form1
         '
         'btnRetrive
         '
-        Me.btnRetrive.Location = New System.Drawing.Point(217, 24)
+        Me.btnRetrive.Location = New System.Drawing.Point(304, 431)
         Me.btnRetrive.Name = "btnRetrive"
-        Me.btnRetrive.Size = New System.Drawing.Size(99, 28)
+        Me.btnRetrive.Size = New System.Drawing.Size(115, 58)
         Me.btnRetrive.TabIndex = 16
         Me.btnRetrive.Text = "Retrive"
         Me.btnRetrive.UseVisualStyleBackColor = True
@@ -186,11 +194,11 @@ Partial Class Form1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.DateOfBirthDataGridViewTextBoxColumn, Me.GenderDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.CustomertableBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(328, 12)
+        Me.DataGridView1.Location = New System.Drawing.Point(304, 32)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(786, 370)
+        Me.DataGridView1.Size = New System.Drawing.Size(798, 330)
         Me.DataGridView1.TabIndex = 17
         '
         'IdDataGridViewTextBoxColumn
@@ -260,16 +268,64 @@ Partial Class Form1
         '
         Me.cmbGender.FormattingEnabled = True
         Me.cmbGender.Items.AddRange(New Object() {"Male", "Female", "Others"})
-        Me.cmbGender.Location = New System.Drawing.Point(111, 139)
+        Me.cmbGender.Location = New System.Drawing.Point(98, 221)
         Me.cmbGender.Name = "cmbGender"
         Me.cmbGender.Size = New System.Drawing.Size(141, 24)
         Me.cmbGender.TabIndex = 18
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(38, 32)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 19
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(198, 32)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox2.TabIndex = 20
+        Me.PictureBox2.TabStop = False
+        '
+        'txtUpdateId
+        '
+        Me.txtUpdateId.Location = New System.Drawing.Point(529, 393)
+        Me.txtUpdateId.Name = "txtUpdateId"
+        Me.txtUpdateId.Size = New System.Drawing.Size(106, 22)
+        Me.txtUpdateId.TabIndex = 21
+        '
+        'txtDeleteId
+        '
+        Me.txtDeleteId.Location = New System.Drawing.Point(746, 393)
+        Me.txtDeleteId.Name = "txtDeleteId"
+        Me.txtDeleteId.Size = New System.Drawing.Size(103, 22)
+        Me.txtDeleteId.TabIndex = 22
+        '
+        'btnclear
+        '
+        Me.btnclear.Location = New System.Drawing.Point(937, 431)
+        Me.btnclear.Name = "btnclear"
+        Me.btnclear.Size = New System.Drawing.Size(99, 58)
+        Me.btnclear.TabIndex = 23
+        Me.btnclear.Text = "Clear Text"
+        Me.btnclear.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1126, 501)
+        Me.Controls.Add(Me.btnclear)
+        Me.Controls.Add(Me.txtDeleteId)
+        Me.Controls.Add(Me.txtUpdateId)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.cmbGender)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnRetrive)
@@ -293,6 +349,8 @@ Partial Class Form1
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomertableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Customer_masterDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -324,4 +382,9 @@ Partial Class Form1
     Friend WithEvents GenderDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents cmbGender As ComboBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents txtUpdateId As TextBox
+    Friend WithEvents txtDeleteId As TextBox
+    Friend WithEvents btnclear As Button
 End Class
