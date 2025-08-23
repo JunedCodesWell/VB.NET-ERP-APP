@@ -22,6 +22,7 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lblId = New System.Windows.Forms.Label()
         Me.lblMedName = New System.Windows.Forms.Label()
         Me.lblStockAvlb = New System.Windows.Forms.Label()
@@ -34,6 +35,21 @@ Partial Class Form2
         Me.btnSaveInsert = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
+        Me.Customer_masterDataSet = New Application.customer_masterDataSet()
+        Me.CustomermasterDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.dvgMedTable = New System.Windows.Forms.DataGridView()
+        Me.Customer_master_medicine_table = New Application.customer_master_medicine_table()
+        Me.MedicineTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Medicine_TableTableAdapter = New Application.customer_master_medicine_tableTableAdapters.medicine_TableTableAdapter()
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MedicineNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StockAvailableDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PricestripDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.Customer_masterDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomermasterDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dvgMedTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Customer_master_medicine_table, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MedicineTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblId
@@ -136,11 +152,82 @@ Partial Class Form2
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
+        'Customer_masterDataSet
+        '
+        Me.Customer_masterDataSet.DataSetName = "customer_masterDataSet"
+        Me.Customer_masterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CustomermasterDataSetBindingSource
+        '
+        Me.CustomermasterDataSetBindingSource.DataSource = Me.Customer_masterDataSet
+        Me.CustomermasterDataSetBindingSource.Position = 0
+        '
+        'dvgMedTable
+        '
+        Me.dvgMedTable.AutoGenerateColumns = False
+        Me.dvgMedTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dvgMedTable.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.MedicineNameDataGridViewTextBoxColumn, Me.StockAvailableDataGridViewTextBoxColumn, Me.PricestripDataGridViewTextBoxColumn})
+        Me.dvgMedTable.DataSource = Me.MedicineTableBindingSource
+        Me.dvgMedTable.Location = New System.Drawing.Point(389, 41)
+        Me.dvgMedTable.Name = "dvgMedTable"
+        Me.dvgMedTable.RowHeadersWidth = 51
+        Me.dvgMedTable.RowTemplate.Height = 24
+        Me.dvgMedTable.Size = New System.Drawing.Size(635, 346)
+        Me.dvgMedTable.TabIndex = 12
+        '
+        'Customer_master_medicine_table
+        '
+        Me.Customer_master_medicine_table.DataSetName = "customer_master_medicine_table"
+        Me.Customer_master_medicine_table.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'MedicineTableBindingSource
+        '
+        Me.MedicineTableBindingSource.DataMember = "medicine_Table"
+        Me.MedicineTableBindingSource.DataSource = Me.Customer_master_medicine_table
+        '
+        'Medicine_TableTableAdapter
+        '
+        Me.Medicine_TableTableAdapter.ClearBeforeFill = True
+        '
+        'IdDataGridViewTextBoxColumn
+        '
+        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "id"
+        Me.IdDataGridViewTextBoxColumn.HeaderText = "id"
+        Me.IdDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
+        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdDataGridViewTextBoxColumn.Width = 125
+        '
+        'MedicineNameDataGridViewTextBoxColumn
+        '
+        Me.MedicineNameDataGridViewTextBoxColumn.DataPropertyName = "Medicine Name"
+        Me.MedicineNameDataGridViewTextBoxColumn.HeaderText = "Medicine Name"
+        Me.MedicineNameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.MedicineNameDataGridViewTextBoxColumn.Name = "MedicineNameDataGridViewTextBoxColumn"
+        Me.MedicineNameDataGridViewTextBoxColumn.Width = 125
+        '
+        'StockAvailableDataGridViewTextBoxColumn
+        '
+        Me.StockAvailableDataGridViewTextBoxColumn.DataPropertyName = "Stock Available"
+        Me.StockAvailableDataGridViewTextBoxColumn.HeaderText = "Stock Available"
+        Me.StockAvailableDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.StockAvailableDataGridViewTextBoxColumn.Name = "StockAvailableDataGridViewTextBoxColumn"
+        Me.StockAvailableDataGridViewTextBoxColumn.Width = 125
+        '
+        'PricestripDataGridViewTextBoxColumn
+        '
+        Me.PricestripDataGridViewTextBoxColumn.DataPropertyName = "Price/strip"
+        Me.PricestripDataGridViewTextBoxColumn.HeaderText = "Price/strip"
+        Me.PricestripDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PricestripDataGridViewTextBoxColumn.Name = "PricestripDataGridViewTextBoxColumn"
+        Me.PricestripDataGridViewTextBoxColumn.Width = 125
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1075, 530)
+        Me.Controls.Add(Me.dvgMedTable)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnSaveInsert)
@@ -156,6 +243,11 @@ Partial Class Form2
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MedicineFrm"
+        CType(Me.Customer_masterDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomermasterDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dvgMedTable, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Customer_master_medicine_table, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MedicineTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -173,4 +265,14 @@ Partial Class Form2
     Friend WithEvents btnSaveInsert As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnDelete As Button
+    Friend WithEvents Customer_masterDataSet As customer_masterDataSet
+    Friend WithEvents CustomermasterDataSetBindingSource As BindingSource
+    Friend WithEvents dvgMedTable As DataGridView
+    Friend WithEvents Customer_master_medicine_table As customer_master_medicine_table
+    Friend WithEvents MedicineTableBindingSource As BindingSource
+    Friend WithEvents Medicine_TableTableAdapter As customer_master_medicine_tableTableAdapters.medicine_TableTableAdapter
+    Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MedicineNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents StockAvailableDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PricestripDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

@@ -85,6 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>customer_masterDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="customer_master_medicine_table.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customer_master_medicine_table.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +154,17 @@
     </None>
     <None Include="customer_masterDataSet.xss">
       <DependentUpon>customer_masterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="customer_master_medicine_table.xsc">
+      <DependentUpon>customer_master_medicine_table.xsd</DependentUpon>
+    </None>
+    <None Include="customer_master_medicine_table.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customer_master_medicine_table.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customer_master_medicine_table.xss">
+      <DependentUpon>customer_master_medicine_table.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

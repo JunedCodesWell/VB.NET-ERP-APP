@@ -1,6 +1,7 @@
 ﻿Imports MedicineClass
 Imports System.Data.SqlClient
 Imports System.Net
+Imports System.Data
 
 
 Public Class Form2
@@ -8,6 +9,8 @@ Public Class Form2
     Dim cn As SqlConnection
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
+    Dim dt As DataTable
+    Dim da As SqlDataAdapter
 
     Private Function ClassAndValidation() As Medicine
 
@@ -42,6 +45,8 @@ Public Class Form2
     End Function
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Customer_master_medicine_table.medicine_Table' table. You can move, or remove it, as needed.
+        Me.Medicine_TableTableAdapter.Fill(Me.Customer_master_medicine_table.medicine_Table)
 
         cn = New SqlConnection("Data Source=DESKTOP-4KKK0QH\SQLEXPRESS;Initial Catalog=customer_master;Integrated Security=True;Encrypt=False;TrustServerCertificate=True")
         cn.Open()
@@ -60,6 +65,7 @@ Public Class Form2
 
         cn.Open()
         cmd.ExecuteNonQuery()
+        UpdateDGVMedTable()
         cn.Close()
         MsgBox("Record Inserted Successfully..")
     End Sub
@@ -75,6 +81,7 @@ Public Class Form2
 
         cn.Open()
         cmd.ExecuteNonQuery()
+        UpdateDGVMedTable()
         cn.Close()
         MsgBox("Record Updated Successfully..")
     End Sub
@@ -87,6 +94,7 @@ Public Class Form2
 
         cn.Open()
         cmd.ExecuteNonQuery()
+        UpdateDGVMedTable()
         cn.Close()
         MsgBox("Record Updated Successfully..")
     End Sub
@@ -105,6 +113,20 @@ Public Class Form2
             txtPricePS.Text = dr(3)
         End If
         cn.Close()
+
+    End Sub
+
+    Private Sub UpdateDGVMedTable()
+
+        da = New SqlDataAdapter
+        dt = New DataTable
+        cmd = New SqlCommand("SELECT * FROM medicine_Table", cn)
+        'cn.Open()
+        da.SelectCommand = cmd
+        da.Fill(dt)
+        'cn.Close()
+
+        dvgMedTable.DataSource = dt
 
     End Sub
 End Class
