@@ -42,14 +42,12 @@ Public Class Form1
         cust.Gender = cmbGender.Text
         cust.Address = txtAddress.Text
 
-
         Return cust
 
     End Function
     '-----------------------------------------
 
-    'SQL Parameters---------------------------
-
+    'DefaultDateValue---------------------------
 
     '-----------------------------------------
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -64,13 +62,18 @@ Public Class Form1
     End Sub
 
     Private Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
-
+        'completed No code Change required
         Dim cust As Customer = ClassAndValidation()
         cmd = New SqlCommand("INSERT INTO customer_table (FirstName, LastName, DateOfBirth, Gender, Address) VALUES (@FirstName, @LastName, @DateOfBirth, @Gender, @Address)", cn)
         cmd.Parameters.AddWithValue("@Id", cust.Id)
         cmd.Parameters.AddWithValue("@FirstName", cust.FirstName)
         cmd.Parameters.AddWithValue("@LastName", cust.LastName)
-        cmd.Parameters.AddWithValue("@DateOfBirth", cust.DateOfBirth)
+        'cmd.Parameters.AddWithValue("@DateOfBirth", cust.DateOfBirth)
+        If cust.DateOfBirth < New DateTime(1753, 1, 1) OrElse cust.DateOfBirth > New DateTime(9999, 12, 31) Then
+            cmd.Parameters.AddWithValue("@DateOfBirth", DBNull.Value)
+        Else
+            cmd.Parameters.AddWithValue("@DateOfBirth", cust.DateOfBirth)
+        End If
         cmd.Parameters.AddWithValue("@Gender", cust.Gender)
         cmd.Parameters.AddWithValue("@Address", cust.Address)
         cn.Open()
@@ -88,7 +91,12 @@ Public Class Form1
         cmd.Parameters.AddWithValue("@Id", cust.Id)
         cmd.Parameters.AddWithValue("@FirstName", cust.FirstName)
         cmd.Parameters.AddWithValue("@LastName", cust.LastName)
-        cmd.Parameters.AddWithValue("@DateOfBirth", cust.DateOfBirth)
+        'cmd.Parameters.AddWithValue("@DateOfBirth", cust.DateOfBirth)
+        If cust.DateOfBirth < New DateTime(1753, 1, 1) OrElse cust.DateOfBirth > New DateTime(9999, 12, 31) Then
+            cmd.Parameters.AddWithValue("@DateOfBirth", DBNull.Value)
+        Else
+            cmd.Parameters.AddWithValue("@DateOfBirth", cust.DateOfBirth)
+        End If
         cmd.Parameters.AddWithValue("@Gender", cust.Gender)
         cmd.Parameters.AddWithValue("@Address", cust.Address)
         cn.Open()

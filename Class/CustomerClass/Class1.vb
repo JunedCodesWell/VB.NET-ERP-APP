@@ -7,7 +7,7 @@
     Dim stGender As String
     Dim stAddress As String
 
-    Public Property EnableValidation As Boolean = True
+    'Public Property EnableValidation As Boolean
 
     Public Property Id As Integer
         Get
@@ -67,9 +67,7 @@
 
     Public Property DateOfBirth As Date
         Set(value As Date)
-            If Not EnableValidation Then
-                Return
-            ElseIf (Year(Now) - Year(value)) < 18 Then
+            If (Year(Now) - Year(value)) < 18 Then
                 MsgBox(Me.FirstName & " " & Me.LastName & ", the age is less than 18")
                 Exit Property
             Else

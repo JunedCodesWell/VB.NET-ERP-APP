@@ -1,0 +1,10 @@
+D:\New VB.NET\Class\MedicineClass\bin\Debug\MedicineClass.dll
+D:\New VB.NET\Class\MedicineClass\bin\Debug\MedicineClass.pdb
+D:\New VB.NET\Class\MedicineClass\bin\Debug\MedicineClass.xml
+D:\New VB.NET\Class\MedicineClass\obj\Debug\MedicineClass.vbproj.AssemblyReference.cache
+D:\New VB.NET\Class\MedicineClass\obj\Debug\MedicineClass.Resources.resources
+D:\New VB.NET\Class\MedicineClass\obj\Debug\MedicineClass.vbproj.GenerateResource.cache
+D:\New VB.NET\Class\MedicineClass\obj\Debug\MedicineClass.vbproj.CoreCompileInputs.cache
+D:\New VB.NET\Class\MedicineClass\obj\Debug\MedicineClass.dll
+D:\New VB.NET\Class\MedicineClass\obj\Debug\MedicineClass.xml
+D:\New VB.NET\Class\MedicineClass\obj\Debug\MedicineClass.pdb

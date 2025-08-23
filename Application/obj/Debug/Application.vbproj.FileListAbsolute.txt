@@ -17,3 +17,6 @@ D:\New VB.NET\Application\bin\Debug\CustomerClass.dll
 D:\New VB.NET\Application\bin\Debug\CustomerClass.pdb
 D:\New VB.NET\Application\bin\Debug\CustomerClass.xml
 D:\New VB.NET\Application\obj\Debug\Applicat.4282EC6F.Up2Date
+D:\New VB.NET\Application\bin\Debug\MedicineClass.dll
+D:\New VB.NET\Application\bin\Debug\MedicineClass.pdb
+D:\New VB.NET\Application\bin\Debug\MedicineClass.xml

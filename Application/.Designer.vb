@@ -157,7 +157,7 @@ Partial Class Form1
         '
         'txtSelect
         '
-        Me.txtSelect.Location = New System.Drawing.Point(111, 28)
+        Me.txtSelect.Location = New System.Drawing.Point(111, 27)
         Me.txtSelect.Name = "txtSelect"
         Me.txtSelect.Size = New System.Drawing.Size(100, 22)
         Me.txtSelect.TabIndex = 14
@@ -165,7 +165,7 @@ Partial Class Form1
         'lblId
         '
         Me.lblId.AutoSize = True
-        Me.lblId.Location = New System.Drawing.Point(39, 33)
+        Me.lblId.Location = New System.Drawing.Point(57, 30)
         Me.lblId.Name = "lblId"
         Me.lblId.Size = New System.Drawing.Size(18, 16)
         Me.lblId.TabIndex = 15
@@ -173,9 +173,9 @@ Partial Class Form1
         '
         'btnRetrive
         '
-        Me.btnRetrive.Location = New System.Drawing.Point(67, 410)
+        Me.btnRetrive.Location = New System.Drawing.Point(217, 24)
         Me.btnRetrive.Name = "btnRetrive"
-        Me.btnRetrive.Size = New System.Drawing.Size(99, 58)
+        Me.btnRetrive.Size = New System.Drawing.Size(99, 28)
         Me.btnRetrive.TabIndex = 16
         Me.btnRetrive.Text = "Retrive"
         Me.btnRetrive.UseVisualStyleBackColor = True
