@@ -7,6 +7,7 @@ Public Class Form2
 
     Dim cn As SqlConnection
     Dim cmd As SqlCommand
+    Dim dr As SqlDataReader
 
     Private Function ClassAndValidation() As Medicine
 
@@ -88,5 +89,22 @@ Public Class Form2
         cmd.ExecuteNonQuery()
         cn.Close()
         MsgBox("Record Updated Successfully..")
+    End Sub
+
+    Private Sub btnRetrieve_Click(sender As Object, e As EventArgs) Handles btnRetrieve.Click
+
+        Dim med As Medicine = ClassAndValidation()
+        cmd = New SqlCommand("SELECT * FROM medicine_Table WHERE Id = @Id", cn)
+        cmd.Parameters.AddWithValue("@Id", med.Id)
+
+        cn.Open()
+        dr = cmd.ExecuteReader()
+        If dr.Read() Then
+            txtMedName.Text = dr(1)
+            txtStockAvlb.Text = dr(2)
+            txtPricePS.Text = dr(3)
+        End If
+        cn.Close()
+
     End Sub
 End Class
