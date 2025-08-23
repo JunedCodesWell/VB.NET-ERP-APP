@@ -2,6 +2,7 @@
 Imports System.Data.SqlClient
 Imports System.Net
 Imports System.Data
+Imports System.Windows.Forms
 
 
 Public Class Form2
@@ -16,10 +17,22 @@ Public Class Form2
 
         Dim med As New Medicine()
 
-        If Integer.TryParse(txtId.Text, Nothing) Then
+        If Integer.TryParse(txtId.Text, Nothing) Then 'for retrieve
             med.Id = Convert.ToInt32(txtId.Text)
         Else
             med.Id = 0
+        End If
+
+        If Integer.TryParse(txtMedUpdateId.Text, Nothing) Then
+            med.medUpdateId = Convert.ToInt32(txtMedUpdateId.Text) 'for update
+        Else
+            med.medUpdateId = 0
+        End If
+
+        If Integer.TryParse(txtMedDeleteId.Text, Nothing) Then 'for delete
+            med.medDeleteId = Convert.ToInt32(txtMedDeleteId.Text)
+        Else
+            med.medDeleteId = 0
         End If
         'med.Id = CInt(txtId.Text) not valid error
         med.MedicineName = txtMedName.Text
@@ -128,5 +141,13 @@ Public Class Form2
 
         dvgMedTable.DataSource = dt
 
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        For Each ctrl As Control In Me.Controls
+            If TypeOf ctrl Is System.Windows.Forms.TextBox Then
+                CType(ctrl, System.Windows.Forms.TextBox).Clear()
+            End If
+        Next
     End Sub
 End Class

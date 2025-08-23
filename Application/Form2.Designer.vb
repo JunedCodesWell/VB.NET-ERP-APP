@@ -38,18 +38,21 @@ Partial Class Form2
         Me.Customer_masterDataSet = New Application.customer_masterDataSet()
         Me.CustomermasterDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dvgMedTable = New System.Windows.Forms.DataGridView()
-        Me.Customer_master_medicine_table = New Application.customer_master_medicine_table()
-        Me.MedicineTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Medicine_TableTableAdapter = New Application.customer_master_medicine_tableTableAdapters.medicine_TableTableAdapter()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MedicineNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StockAvailableDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PricestripDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MedicineTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Customer_master_medicine_table = New Application.customer_master_medicine_table()
+        Me.Medicine_TableTableAdapter = New Application.customer_master_medicine_tableTableAdapters.medicine_TableTableAdapter()
+        Me.txtMedUpdateId = New System.Windows.Forms.TextBox()
+        Me.txtMedDeleteId = New System.Windows.Forms.TextBox()
+        Me.btnClear = New System.Windows.Forms.Button()
         CType(Me.Customer_masterDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomermasterDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dvgMedTable, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Customer_master_medicine_table, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MedicineTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Customer_master_medicine_table, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblId
@@ -90,9 +93,9 @@ Partial Class Form2
         '
         'txtId
         '
-        Me.txtId.Location = New System.Drawing.Point(140, 41)
+        Me.txtId.Location = New System.Drawing.Point(276, 430)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(100, 22)
+        Me.txtId.Size = New System.Drawing.Size(85, 22)
         Me.txtId.TabIndex = 4
         '
         'txtMedName
@@ -118,16 +121,16 @@ Partial Class Form2
         '
         'btnRetrieve
         '
-        Me.btnRetrieve.Location = New System.Drawing.Point(281, 41)
+        Me.btnRetrieve.Location = New System.Drawing.Point(276, 467)
         Me.btnRetrieve.Name = "btnRetrieve"
-        Me.btnRetrieve.Size = New System.Drawing.Size(75, 23)
+        Me.btnRetrieve.Size = New System.Drawing.Size(85, 51)
         Me.btnRetrieve.TabIndex = 8
         Me.btnRetrieve.Text = "Retrieve"
         Me.btnRetrieve.UseVisualStyleBackColor = True
         '
         'btnSaveInsert
         '
-        Me.btnSaveInsert.Location = New System.Drawing.Point(161, 442)
+        Me.btnSaveInsert.Location = New System.Drawing.Point(84, 336)
         Me.btnSaveInsert.Name = "btnSaveInsert"
         Me.btnSaveInsert.Size = New System.Drawing.Size(100, 51)
         Me.btnSaveInsert.TabIndex = 9
@@ -136,7 +139,7 @@ Partial Class Form2
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(537, 442)
+        Me.btnUpdate.Location = New System.Drawing.Point(512, 467)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(91, 51)
         Me.btnUpdate.TabIndex = 10
@@ -145,7 +148,7 @@ Partial Class Form2
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(904, 442)
+        Me.btnDelete.Location = New System.Drawing.Point(759, 467)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(92, 51)
         Me.btnDelete.TabIndex = 11
@@ -174,20 +177,6 @@ Partial Class Form2
         Me.dvgMedTable.RowTemplate.Height = 24
         Me.dvgMedTable.Size = New System.Drawing.Size(635, 346)
         Me.dvgMedTable.TabIndex = 12
-        '
-        'Customer_master_medicine_table
-        '
-        Me.Customer_master_medicine_table.DataSetName = "customer_master_medicine_table"
-        Me.Customer_master_medicine_table.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'MedicineTableBindingSource
-        '
-        Me.MedicineTableBindingSource.DataMember = "medicine_Table"
-        Me.MedicineTableBindingSource.DataSource = Me.Customer_master_medicine_table
-        '
-        'Medicine_TableTableAdapter
-        '
-        Me.Medicine_TableTableAdapter.ClearBeforeFill = True
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -222,11 +211,51 @@ Partial Class Form2
         Me.PricestripDataGridViewTextBoxColumn.Name = "PricestripDataGridViewTextBoxColumn"
         Me.PricestripDataGridViewTextBoxColumn.Width = 125
         '
+        'MedicineTableBindingSource
+        '
+        Me.MedicineTableBindingSource.DataMember = "medicine_Table"
+        Me.MedicineTableBindingSource.DataSource = Me.Customer_master_medicine_table
+        '
+        'Customer_master_medicine_table
+        '
+        Me.Customer_master_medicine_table.DataSetName = "customer_master_medicine_table"
+        Me.Customer_master_medicine_table.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Medicine_TableTableAdapter
+        '
+        Me.Medicine_TableTableAdapter.ClearBeforeFill = True
+        '
+        'txtMedUpdateId
+        '
+        Me.txtMedUpdateId.Location = New System.Drawing.Point(512, 430)
+        Me.txtMedUpdateId.Name = "txtMedUpdateId"
+        Me.txtMedUpdateId.Size = New System.Drawing.Size(91, 22)
+        Me.txtMedUpdateId.TabIndex = 13
+        '
+        'txtMedDeleteId
+        '
+        Me.txtMedDeleteId.Location = New System.Drawing.Point(759, 430)
+        Me.txtMedDeleteId.Name = "txtMedDeleteId"
+        Me.txtMedDeleteId.Size = New System.Drawing.Size(92, 22)
+        Me.txtMedDeleteId.TabIndex = 14
+        '
+        'btnClear
+        '
+        Me.btnClear.Location = New System.Drawing.Point(927, 446)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(115, 43)
+        Me.btnClear.TabIndex = 15
+        Me.btnClear.Text = "Clear Text"
+        Me.btnClear.UseVisualStyleBackColor = True
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1075, 530)
+        Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.txtMedDeleteId)
+        Me.Controls.Add(Me.txtMedUpdateId)
         Me.Controls.Add(Me.dvgMedTable)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
@@ -246,8 +275,8 @@ Partial Class Form2
         CType(Me.Customer_masterDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomermasterDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dvgMedTable, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Customer_master_medicine_table, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MedicineTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Customer_master_medicine_table, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -275,4 +304,7 @@ Partial Class Form2
     Friend WithEvents MedicineNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StockAvailableDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PricestripDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents txtMedUpdateId As TextBox
+    Friend WithEvents txtMedDeleteId As TextBox
+    Friend WithEvents btnClear As Button
 End Class

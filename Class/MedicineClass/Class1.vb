@@ -4,6 +4,8 @@
     Dim stMedicineName As String
     Dim intStockAvlb As Integer
     Dim dcPricePS As Decimal
+    Dim intMedUpdateId As Integer
+    Dim intMedDeleteId As Integer
 
     Public Property Id As Integer
         Get
@@ -12,6 +14,24 @@
         Set(ByVal value As Integer)
             intId = value
         End Set
+    End Property
+
+    Public Property medDeleteId As Integer
+        Set(ByVal value As Integer)
+            intMedDeleteId = value
+        End Set
+        Get
+            Return intMedDeleteId
+        End Get
+    End Property
+
+    Public Property medUpdateId As Integer
+        Set(ByVal value As Integer)
+            intMedUpdateId = value
+        End Set
+        Get
+            Return intMedUpdateId
+        End Get
     End Property
 
     Public Property MedicineName As String
