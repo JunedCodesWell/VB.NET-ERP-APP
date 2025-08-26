@@ -10,6 +10,14 @@
     Dim stAddress As String
 
     'Public Property EnableValidation As Boolean
+    'Public Sub New(FirstName As String, LastName As String, DateOfBirth As Date, Gender As String)
+
+    'Me.FirstName = FirstName
+    'Me.LastName = LastName
+    'Me.DateOfBirth = DateOfBirth
+    'Me.Gender = Gender
+
+    'End Sub
 
     Public Property Id As Integer
         Get

@@ -7,7 +7,7 @@
     Dim intMedUpdateId As Integer
     Dim intMedDeleteId As Integer
 
-    Public Property Id As Integer
+    Public Property medId As Integer
         Get
             Return intId
         End Get

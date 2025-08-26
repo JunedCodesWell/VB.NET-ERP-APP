@@ -117,34 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Customer_masterDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="CustomermasterDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>244, 17</value>
-  </metadata>
-  <metadata name="MedicineTableBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>842, 17</value>
-  </metadata>
-  <metadata name="Customer_master_medicine_table.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>561, 17</value>
-  </metadata>
-  <metadata name="Medicine_TableTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1094, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAAUZJREFUaEPt2UtOAkEUheGGBAwugJlswug+HBo34wwfI3fhYxk61kX4IjB04Ez9
-        L0Ej7QHtAeEeUyf5kg7VndwGqrlVVCUlJSX/Pl2c4hGT2fEGbHKC95ob9GGREeo3EO6xjfRRxX96wR5S
-        RxX+3RsO0ULKqKKVc/SQLqrYRW6xhVRRhS4Tj9sdpIkq8jevOECKqAL/Iib3EdpYa1RxTVxhE2uLKqqp
-        OwwgE73KMZ6gLs4i6tvFj8T3TF2QUUzufcwl+zuvnOFrcqsTHFyiAznoItYWcsBFLJDkgAv7G4jVnhxw
-        cIHpJI7uT52Q2dxjdAh1UkbyhyxaibiJ7J/EwlZi1VHFNLW0mVt1VEFN2LbT1gsa6yWl9aLeelvFdmPL
-        emvRYnP3Gap4m+312PGoF38Nmz84oteKvv0B49lxvFZSUlJin6r6AAXcKcUvYYsXAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>30</value>
-  </metadata>
 </root>

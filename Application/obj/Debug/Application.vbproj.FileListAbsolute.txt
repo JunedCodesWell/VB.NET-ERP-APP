@@ -20,3 +20,4 @@ D:\New VB.NET\Application\obj\Debug\Applicat.4282EC6F.Up2Date
 D:\New VB.NET\Application\bin\Debug\MedicineClass.dll
 D:\New VB.NET\Application\bin\Debug\MedicineClass.pdb
 D:\New VB.NET\Application\bin\Debug\MedicineClass.xml
+D:\New VB.NET\Application\obj\Debug\Application.Form3.resources

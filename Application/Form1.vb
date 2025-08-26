@@ -28,7 +28,7 @@ Public Class Form1
 
 
     'Function for imported Class and Validation----
-    Private Function ClassAndValidation() As Customer
+    Public Function ClassAndValidation() As Customer
 
         Dim cust As New Customer()
 
@@ -96,6 +96,7 @@ Public Class Form1
         UpdateDGV()
         cn.Close()
         MsgBox("Record inserted successfully")
+        Form2.Show()
 
     End Sub
 
@@ -119,6 +120,7 @@ Public Class Form1
         UpdateDGV()
         cn.Close()
         MsgBox("Record updated successfully")
+        Form2.Show()
 
 
     End Sub

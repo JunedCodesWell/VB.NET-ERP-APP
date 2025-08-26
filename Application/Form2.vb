@@ -1,7 +1,9 @@
-﻿Imports MedicineClass
+﻿Imports CustomerClass
+Imports MedicineClass
 Imports System.Data.SqlClient
 Imports System.Net
 Imports System.Data
+Imports System.Data.Common
 Imports System.Windows.Forms
 
 
@@ -13,14 +15,14 @@ Public Class Form2
     Dim dt As DataTable
     Dim da As SqlDataAdapter
 
-    Private Function ClassAndValidation() As Medicine
+    Public Function ClassAndValidation() As Medicine
 
         Dim med As New Medicine()
 
         If Integer.TryParse(txtId.Text, Nothing) Then 'for retrieve
-            med.Id = Convert.ToInt32(txtId.Text)
+            med.medId = Convert.ToInt32(txtId.Text)
         Else
-            med.Id = 0
+            med.medId = 0
         End If
 
         If Integer.TryParse(txtMedUpdateId.Text, Nothing) Then
@@ -71,7 +73,6 @@ Public Class Form2
         'No change needed
         Dim med As Medicine = ClassAndValidation()
         cmd = New SqlCommand("INSERT INTO medicine_Table ([Medicine Name], [Stock Available], [Price/Strip]) VALUES (@MedicineName, @StockAvailable, @PriceStrip)", cn)
-        'cmd.Parameters.AddWithValue("@Id", med.Id)
         cmd.Parameters.AddWithValue("@MedicineName", med.MedicineName)
         cmd.Parameters.AddWithValue("@StockAvailable", med.StockAvailable)
         cmd.Parameters.AddWithValue("@PriceStrip", med.PricePerStrip)
@@ -81,13 +82,14 @@ Public Class Form2
         UpdateDGVMedTable()
         cn.Close()
         MsgBox("Record Inserted Successfully..")
+
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         'No change needed
         Dim med As Medicine = ClassAndValidation()
         cmd = New SqlCommand("UPDATE medicine_Table SET [Medicine Name] = @MedicineName, [Stock Available] = @StockAvailable, [Price/Strip] = @PriceStrip WHERE Id = @Id", cn)
-        cmd.Parameters.AddWithValue("@Id", med.Id)
+        cmd.Parameters.AddWithValue("@Id", med.medId)
         cmd.Parameters.AddWithValue("@MedicineName", med.MedicineName)
         cmd.Parameters.AddWithValue("@StockAvailable", med.StockAvailable)
         cmd.Parameters.AddWithValue("@PriceStrip", med.PricePerStrip)
@@ -97,26 +99,28 @@ Public Class Form2
         UpdateDGVMedTable()
         cn.Close()
         MsgBox("Record Updated Successfully..")
+
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
         Dim med As Medicine = ClassAndValidation()
         cmd = New SqlCommand("DELETE FROM medicine_Table WHERE Id = @Id", cn)
-        cmd.Parameters.AddWithValue("@Id", med.Id)
+        cmd.Parameters.AddWithValue("@Id", med.medId)
 
         cn.Open()
         cmd.ExecuteNonQuery()
         UpdateDGVMedTable()
         cn.Close()
         MsgBox("Record Updated Successfully..")
+
     End Sub
 
     Private Sub btnRetrieve_Click(sender As Object, e As EventArgs) Handles btnRetrieve.Click
 
         Dim med As Medicine = ClassAndValidation()
         cmd = New SqlCommand("SELECT * FROM medicine_Table WHERE Id = @Id", cn)
-        cmd.Parameters.AddWithValue("@Id", med.Id)
+        cmd.Parameters.AddWithValue("@Id", med.medId)
 
         cn.Open()
         dr = cmd.ExecuteReader()
@@ -138,16 +142,25 @@ Public Class Form2
         da.SelectCommand = cmd
         da.Fill(dt)
         'cn.Close()
-
         dvgMedTable.DataSource = dt
 
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+
         For Each ctrl As Control In Me.Controls
             If TypeOf ctrl Is System.Windows.Forms.TextBox Then
                 CType(ctrl, System.Windows.Forms.TextBox).Clear()
             End If
         Next
+
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Dim cust As Customer = Form1.ClassAndValidation()
+        Dim med As Medicine = Me.ClassAndValidation()
+
+        Dim frm3 As New Form3(cust, med)
+        frm3.Show()
     End Sub
 End Class

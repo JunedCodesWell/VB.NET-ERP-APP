@@ -23,6 +23,7 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.lblId = New System.Windows.Forms.Label()
         Me.lblMedName = New System.Windows.Forms.Label()
         Me.lblStockAvlb = New System.Windows.Forms.Label()
@@ -48,11 +49,13 @@ Partial Class Form2
         Me.txtMedUpdateId = New System.Windows.Forms.TextBox()
         Me.txtMedDeleteId = New System.Windows.Forms.TextBox()
         Me.btnClear = New System.Windows.Forms.Button()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         CType(Me.Customer_masterDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomermasterDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dvgMedTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MedicineTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Customer_master_medicine_table, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblId
@@ -93,7 +96,7 @@ Partial Class Form2
         '
         'txtId
         '
-        Me.txtId.Location = New System.Drawing.Point(276, 430)
+        Me.txtId.Location = New System.Drawing.Point(34, 440)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(85, 22)
         Me.txtId.TabIndex = 4
@@ -121,7 +124,7 @@ Partial Class Form2
         '
         'btnRetrieve
         '
-        Me.btnRetrieve.Location = New System.Drawing.Point(276, 467)
+        Me.btnRetrieve.Location = New System.Drawing.Point(34, 477)
         Me.btnRetrieve.Name = "btnRetrieve"
         Me.btnRetrieve.Size = New System.Drawing.Size(85, 51)
         Me.btnRetrieve.TabIndex = 8
@@ -139,7 +142,7 @@ Partial Class Form2
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(512, 467)
+        Me.btnUpdate.Location = New System.Drawing.Point(270, 477)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(91, 51)
         Me.btnUpdate.TabIndex = 10
@@ -148,7 +151,7 @@ Partial Class Form2
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(759, 467)
+        Me.btnDelete.Location = New System.Drawing.Point(517, 477)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(92, 51)
         Me.btnDelete.TabIndex = 11
@@ -227,32 +230,43 @@ Partial Class Form2
         '
         'txtMedUpdateId
         '
-        Me.txtMedUpdateId.Location = New System.Drawing.Point(512, 430)
+        Me.txtMedUpdateId.Location = New System.Drawing.Point(270, 440)
         Me.txtMedUpdateId.Name = "txtMedUpdateId"
         Me.txtMedUpdateId.Size = New System.Drawing.Size(91, 22)
         Me.txtMedUpdateId.TabIndex = 13
         '
         'txtMedDeleteId
         '
-        Me.txtMedDeleteId.Location = New System.Drawing.Point(759, 430)
+        Me.txtMedDeleteId.Location = New System.Drawing.Point(517, 440)
         Me.txtMedDeleteId.Name = "txtMedDeleteId"
         Me.txtMedDeleteId.Size = New System.Drawing.Size(92, 22)
         Me.txtMedDeleteId.TabIndex = 14
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(927, 446)
+        Me.btnClear.Location = New System.Drawing.Point(685, 456)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(115, 43)
         Me.btnClear.TabIndex = 15
         Me.btnClear.Text = "Clear Text"
         Me.btnClear.UseVisualStyleBackColor = True
         '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(227, 27)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox3.TabIndex = 16
+        Me.PictureBox3.TabStop = False
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1075, 530)
+        Me.ClientSize = New System.Drawing.Size(1484, 733)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.txtMedDeleteId)
         Me.Controls.Add(Me.txtMedUpdateId)
@@ -277,6 +291,7 @@ Partial Class Form2
         CType(Me.dvgMedTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MedicineTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Customer_master_medicine_table, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -307,4 +322,5 @@ Partial Class Form2
     Friend WithEvents txtMedUpdateId As TextBox
     Friend WithEvents txtMedDeleteId As TextBox
     Friend WithEvents btnClear As Button
+    Friend WithEvents PictureBox3 As PictureBox
 End Class
