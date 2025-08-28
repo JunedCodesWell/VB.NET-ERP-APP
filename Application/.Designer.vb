@@ -138,7 +138,7 @@ Partial Class Form1
         '
         'btnInsert
         '
-        Me.btnInsert.Location = New System.Drawing.Point(66, 375)
+        Me.btnInsert.Location = New System.Drawing.Point(179, 357)
         Me.btnInsert.Name = "btnInsert"
         Me.btnInsert.Size = New System.Drawing.Size(100, 58)
         Me.btnInsert.TabIndex = 11
@@ -309,9 +309,9 @@ Partial Class Form1
         '
         'btnclear
         '
-        Me.btnclear.Location = New System.Drawing.Point(937, 431)
+        Me.btnclear.Location = New System.Drawing.Point(38, 357)
         Me.btnclear.Name = "btnclear"
-        Me.btnclear.Size = New System.Drawing.Size(99, 58)
+        Me.btnclear.Size = New System.Drawing.Size(106, 58)
         Me.btnclear.TabIndex = 23
         Me.btnclear.Text = "Clear Text"
         Me.btnclear.UseVisualStyleBackColor = True

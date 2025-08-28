@@ -9,8 +9,9 @@ Public Class Form3
     'declaring variables to hold the variables
     Private cust As Customer
     Private med As Medicine
+    Private billCartItems As DataTable
 
-    Public Sub New(ByVal Form1Cust As Customer, ByVal form2Med As Medicine) 'custom constructor
+    Public Sub New(ByVal Form1Cust As Customer, ByVal form2Med As Medicine, ByVal BillTable As DataTable) 'custom constructor
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -18,15 +19,19 @@ Public Class Form3
         ' Add any initialization after the InitializeComponent() call.
         cust = Form1Cust
         med = form2Med
+        billCartItems = BillTable
+        DataGridView1.DataSource = billCartItems
 
     End Sub
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblFrm3Date.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")     'set current date and time while the bill is generated
         billDeatils()
     End Sub
 
     Private Sub billDeatils()
 
+        Dim custId As String = cust.Id
         Dim Fname As String = cust.FirstName
         Dim Lname As String = cust.LastName
         Dim DOB As Date = cust.DateOfBirth
@@ -36,16 +41,20 @@ Public Class Form3
         Dim medName As String = med.MedicineName
         Dim PPS As String = med.PricePerStrip
 
+        lblFrm3CustomerId.Text = custId
         lblFrm3Fname.Text = Fname
         lblFrm3Lname.Text = Lname
         lblFrm3DOB.Text = DOB
         lblFrm3Gender.Text = Gender
         lblFrm3Address.Text = Address
 
-        lblFrm3MedName.Text = medName
-        lblFrm3PPS.Text = PPS
+        'lblFrm3MedName.Text = medName
+        'lblFrm3PPS.Text = PPS
 
     End Sub
 
+    Public Sub SetTotalAmount(value As String)
+        lblTotalAmountForm3.Text = value
+    End Sub
 
 End Class

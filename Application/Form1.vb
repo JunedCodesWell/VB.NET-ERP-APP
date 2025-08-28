@@ -14,18 +14,6 @@ Public Class Form1
     Dim dr As SqlDataReader
     Dim da As SqlDataAdapter
     Dim dt As DataTable
-    '--------------------------------
-
-    'TextBox.Text values in a variable-------
-    'Dim Id As Integer
-    'Dim FirstName As String = txtFirstName.Text
-    'Dim LastName As String = txtLastName.Text
-    'Dim DOB As Date = DateTimePicker1.Value
-    'Dim Gender As String = txtGender.Text
-    'Dim Address As String = txtAddress.Text
-
-    '-----------------------------------------
-
 
     'Function for imported Class and Validation----
     Public Function ClassAndValidation() As Customer
@@ -60,11 +48,7 @@ Public Class Form1
         Return cust
 
     End Function
-    '-----------------------------------------
 
-    'DefaultDateValue---------------------------
-
-    '-----------------------------------------
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Customer_masterDataSet.customer_table' table. You can move, or remove it, as needed.
         Me.Customer_tableTableAdapter.Fill(Me.Customer_masterDataSet.customer_table)
@@ -164,16 +148,11 @@ Public Class Form1
         da = New SqlDataAdapter
         dt = New DataTable
         cmd = New SqlCommand("SELECT * FROM customer_table", cn)
-        'cn.Open()
         da.SelectCommand = cmd
         da.Fill(dt)
-        'cn.Close()
-
         DataGridView1.DataSource = dt
 
     End Sub
-
-
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Form2.Show()
@@ -181,7 +160,8 @@ Public Class Form1
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         MsgBox("clicked")
-        mainFrm.Show()
+        Dim mainForm As New mainFrm()
+        mainForm.Show()
         'error int this piece of code
     End Sub
 
@@ -193,4 +173,5 @@ Public Class Form1
             End If
         Next
     End Sub
+
 End Class
