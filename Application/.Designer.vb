@@ -86,9 +86,11 @@ Partial Class Form1
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.CustomFormat = """dd/MM/yyyy"""
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePicker1.Location = New System.Drawing.Point(98, 194)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 22)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(181, 22)
         Me.DateTimePicker1.TabIndex = 4
         '
         'lblFirstName

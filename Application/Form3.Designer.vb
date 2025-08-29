@@ -45,7 +45,7 @@ Partial Class Form3
         'lblId
         '
         Me.lblId.AutoSize = True
-        Me.lblId.Location = New System.Drawing.Point(1039, 85)
+        Me.lblId.Location = New System.Drawing.Point(757, 56)
         Me.lblId.Name = "lblId"
         Me.lblId.Size = New System.Drawing.Size(24, 16)
         Me.lblId.TabIndex = 33
@@ -54,7 +54,7 @@ Partial Class Form3
         'lblFirstName
         '
         Me.lblFirstName.AutoSize = True
-        Me.lblFirstName.Location = New System.Drawing.Point(34, 142)
+        Me.lblFirstName.Location = New System.Drawing.Point(35, 99)
         Me.lblFirstName.Name = "lblFirstName"
         Me.lblFirstName.Size = New System.Drawing.Size(69, 16)
         Me.lblFirstName.TabIndex = 23
@@ -63,7 +63,7 @@ Partial Class Form3
         'lblLastName
         '
         Me.lblLastName.AutoSize = True
-        Me.lblLastName.Location = New System.Drawing.Point(34, 170)
+        Me.lblLastName.Location = New System.Drawing.Point(35, 127)
         Me.lblLastName.Name = "lblLastName"
         Me.lblLastName.Size = New System.Drawing.Size(69, 16)
         Me.lblLastName.TabIndex = 24
@@ -72,7 +72,7 @@ Partial Class Form3
         'lblDateOfBirth
         '
         Me.lblDateOfBirth.AutoSize = True
-        Me.lblDateOfBirth.Location = New System.Drawing.Point(34, 198)
+        Me.lblDateOfBirth.Location = New System.Drawing.Point(35, 155)
         Me.lblDateOfBirth.Name = "lblDateOfBirth"
         Me.lblDateOfBirth.Size = New System.Drawing.Size(75, 16)
         Me.lblDateOfBirth.TabIndex = 25
@@ -81,7 +81,7 @@ Partial Class Form3
         'lblGender
         '
         Me.lblGender.AutoSize = True
-        Me.lblGender.Location = New System.Drawing.Point(34, 227)
+        Me.lblGender.Location = New System.Drawing.Point(35, 184)
         Me.lblGender.Name = "lblGender"
         Me.lblGender.Size = New System.Drawing.Size(52, 16)
         Me.lblGender.TabIndex = 26
@@ -90,7 +90,7 @@ Partial Class Form3
         'lblAddress
         '
         Me.lblAddress.AutoSize = True
-        Me.lblAddress.Location = New System.Drawing.Point(34, 255)
+        Me.lblAddress.Location = New System.Drawing.Point(35, 212)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(58, 16)
         Me.lblAddress.TabIndex = 27
@@ -99,7 +99,7 @@ Partial Class Form3
         'lblFrm3Fname
         '
         Me.lblFrm3Fname.AutoSize = True
-        Me.lblFrm3Fname.Location = New System.Drawing.Point(164, 142)
+        Me.lblFrm3Fname.Location = New System.Drawing.Point(165, 99)
         Me.lblFrm3Fname.Name = "lblFrm3Fname"
         Me.lblFrm3Fname.Size = New System.Drawing.Size(48, 16)
         Me.lblFrm3Fname.TabIndex = 42
@@ -108,7 +108,7 @@ Partial Class Form3
         'lblFrm3Lname
         '
         Me.lblFrm3Lname.AutoSize = True
-        Me.lblFrm3Lname.Location = New System.Drawing.Point(164, 170)
+        Me.lblFrm3Lname.Location = New System.Drawing.Point(165, 127)
         Me.lblFrm3Lname.Name = "lblFrm3Lname"
         Me.lblFrm3Lname.Size = New System.Drawing.Size(48, 16)
         Me.lblFrm3Lname.TabIndex = 43
@@ -117,7 +117,7 @@ Partial Class Form3
         'lblFrm3DOB
         '
         Me.lblFrm3DOB.AutoSize = True
-        Me.lblFrm3DOB.Location = New System.Drawing.Point(164, 198)
+        Me.lblFrm3DOB.Location = New System.Drawing.Point(165, 155)
         Me.lblFrm3DOB.Name = "lblFrm3DOB"
         Me.lblFrm3DOB.Size = New System.Drawing.Size(48, 16)
         Me.lblFrm3DOB.TabIndex = 44
@@ -126,7 +126,7 @@ Partial Class Form3
         'lblFrm3Gender
         '
         Me.lblFrm3Gender.AutoSize = True
-        Me.lblFrm3Gender.Location = New System.Drawing.Point(164, 227)
+        Me.lblFrm3Gender.Location = New System.Drawing.Point(165, 184)
         Me.lblFrm3Gender.Name = "lblFrm3Gender"
         Me.lblFrm3Gender.Size = New System.Drawing.Size(48, 16)
         Me.lblFrm3Gender.TabIndex = 45
@@ -135,7 +135,7 @@ Partial Class Form3
         'lblFrm3Address
         '
         Me.lblFrm3Address.AutoSize = True
-        Me.lblFrm3Address.Location = New System.Drawing.Point(164, 255)
+        Me.lblFrm3Address.Location = New System.Drawing.Point(165, 212)
         Me.lblFrm3Address.Name = "lblFrm3Address"
         Me.lblFrm3Address.Size = New System.Drawing.Size(48, 16)
         Me.lblFrm3Address.TabIndex = 46
@@ -144,17 +144,17 @@ Partial Class Form3
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(477, 142)
+        Me.DataGridView1.Location = New System.Drawing.Point(323, 99)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(694, 319)
+        Me.DataGridView1.Size = New System.Drawing.Size(623, 319)
         Me.DataGridView1.TabIndex = 49
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(930, 497)
+        Me.Label1.Location = New System.Drawing.Point(639, 463)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 16)
         Me.Label1.TabIndex = 50
@@ -163,7 +163,7 @@ Partial Class Form3
         'lblTotalAmountForm3
         '
         Me.lblTotalAmountForm3.AutoSize = True
-        Me.lblTotalAmountForm3.Location = New System.Drawing.Point(1092, 497)
+        Me.lblTotalAmountForm3.Location = New System.Drawing.Point(801, 463)
         Me.lblTotalAmountForm3.Name = "lblTotalAmountForm3"
         Me.lblTotalAmountForm3.Size = New System.Drawing.Size(79, 16)
         Me.lblTotalAmountForm3.TabIndex = 51
@@ -173,7 +173,7 @@ Partial Class Form3
         'lblFrm3CustomerId
         '
         Me.lblFrm3CustomerId.AutoSize = True
-        Me.lblFrm3CustomerId.Location = New System.Drawing.Point(1078, 85)
+        Me.lblFrm3CustomerId.Location = New System.Drawing.Point(796, 56)
         Me.lblFrm3CustomerId.Name = "lblFrm3CustomerId"
         Me.lblFrm3CustomerId.Size = New System.Drawing.Size(75, 16)
         Me.lblFrm3CustomerId.TabIndex = 52
@@ -182,7 +182,7 @@ Partial Class Form3
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(1024, 57)
+        Me.Label2.Location = New System.Drawing.Point(742, 28)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 16)
         Me.Label2.TabIndex = 53
@@ -191,7 +191,7 @@ Partial Class Form3
         'lblFrm3Date
         '
         Me.lblFrm3Date.AutoSize = True
-        Me.lblFrm3Date.Location = New System.Drawing.Point(1081, 56)
+        Me.lblFrm3Date.Location = New System.Drawing.Point(799, 27)
         Me.lblFrm3Date.Name = "lblFrm3Date"
         Me.lblFrm3Date.Size = New System.Drawing.Size(80, 16)
         Me.lblFrm3Date.TabIndex = 54
@@ -201,7 +201,7 @@ Partial Class Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1233, 554)
+        Me.ClientSize = New System.Drawing.Size(1016, 529)
         Me.Controls.Add(Me.lblFrm3Date)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblFrm3CustomerId)
