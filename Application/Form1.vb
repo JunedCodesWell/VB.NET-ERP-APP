@@ -20,19 +20,19 @@ Public Class Form1
 
         Dim cust As New Customer()
 
-        If Integer.TryParse(txtSelect.Text, Nothing) Then 'for retrieve
+        If Integer.TryParse(txtSelect.Text, Nothing) Then 'for retrieve btn
             cust.Id = Convert.ToInt32(txtSelect.Text)
         Else
             cust.Id = 0
         End If
 
-        If Integer.TryParse(txtUpdateId.Text, Nothing) Then 'for update
+        If Integer.TryParse(txtUpdateId.Text, Nothing) Then 'for update btn
             cust.UpdateId = Convert.ToInt32(txtUpdateId.Text)
         Else
             cust.UpdateId = 0
         End If
 
-        If Integer.TryParse(txtDeleteId.Text, Nothing) Then 'for delete
+        If Integer.TryParse(txtDeleteId.Text, Nothing) Then 'for delete btn
             cust.DeleteId = Convert.ToInt32(txtDeleteId.Text)
         Else
             cust.DeleteId = 0
@@ -63,6 +63,9 @@ Public Class Form1
     Private Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
         'completed No code Change required
         Dim cust As Customer = ClassAndValidation()
+        If Not cust.IsValidAge() Then
+            Exit Sub
+        End If
         cmd = New SqlCommand("INSERT INTO customer_table (FirstName, LastName, DateOfBirth, Gender, Address) VALUES (@FirstName, @LastName, @DateOfBirth, @Gender, @Address)", cn)
         cmd.Parameters.AddWithValue("@Id", cust.Id)
         cmd.Parameters.AddWithValue("@FirstName", cust.FirstName)
@@ -87,6 +90,9 @@ Public Class Form1
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
         Dim cust As Customer = ClassAndValidation()
+        If Not cust.IsValidAge() Then
+            Exit Sub
+        End If
         cmd = New SqlCommand("UPDATE customer_table SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth, Gender = @Gender, Address = @Address WHERE Id = @Id", cn)
         cmd.Parameters.AddWithValue("@Id", cust.UpdateId)
         cmd.Parameters.AddWithValue("@FirstName", cust.FirstName)

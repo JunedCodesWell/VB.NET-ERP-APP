@@ -96,17 +96,22 @@
 
     Public Property DateOfBirth As Date
         Set(value As Date)
-            If (Year(Now) - Year(value)) < 18 Then
-                MsgBox(Me.FirstName & " " & Me.LastName & ", the age is less than 18")
-                Exit Property
-            Else
-                dtDateOfBirth = value
-            End If
+            dtDateOfBirth = value
         End Set
         Get
             Return dtDateOfBirth
         End Get
     End Property
+
+    'method for age validation
+    Public Function IsValidAge() As Boolean
+        Dim age As Integer = Year(Now) - Year(Me.DateOfBirth)
+        If age < 18 Then
+            MsgBox(Me.FirstName & " " & Me.LastName & ", the age is less than 18")
+            Return False
+        End If
+        Return True
+    End Function
 
     Public Property Gender As String
         Set(value As String)
